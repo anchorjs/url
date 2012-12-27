@@ -7,6 +7,7 @@ function(exports, file, querystring, punycode) {
   exports.parse = urlParse;
   exports.format = urlFormat;
   exports.resolve = urlResolve;
+  exports.resolveObject = urlResolveObject;
   
   exports.Url = Url;
 
