@@ -1050,6 +1050,26 @@ function(url) {
       });
     });
     
+    describe('parse null tests', function() {
+      // https://github.com/joyent/node/issues/568
+      var parseNullTests = [
+        undefined,
+        null,
+        true,
+        false,
+        0.0,
+        0,
+        [],
+        {}
+      ]
+      
+      it('should throw', function() {
+        parseNullTests.forEach(function(val) {
+          expect(function() { url.parse(val); }).to.throw(TypeError);
+        });
+      });
+    });
+    
   });
   
   return { name: "test.url" }
