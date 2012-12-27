@@ -42,3 +42,4 @@ module.
 [The MIT License](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2012 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
+Copyright Joyent, Inc. and other Node contributors.

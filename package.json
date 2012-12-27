@@ -30,6 +30,8 @@
   },
   "volo": {
     "dependencies": {
+      "punycode": "github:bestiejs/punycode.js/1.1.1",
+      "querystring": "github:anchorjs/querystring/master"
     }
   }
 }
