@@ -16,6 +16,7 @@ function(url) {
   });
 
   describe('URL - Node implementation', function() {
+    
     describe('parse tests', function() {
       var parseTests = {
         '//some_path' : {
@@ -754,6 +755,47 @@ function(url) {
         }
       });
     });
+    
+    describe('parse tests with query string', function() {
+      var parseTestsWithQueryString = {
+        '/foo/bar?baz=quux#frag' : {
+          'href': '/foo/bar?baz=quux#frag',
+          'hash': '#frag',
+          'search': '?baz=quux',
+          'query': {
+            'baz': 'quux'
+          },
+          'pathname': '/foo/bar',
+          'path': '/foo/bar?baz=quux'
+        },
+        'http://example.com' : {
+          'href': 'http://example.com/',
+          'protocol': 'http:',
+          'slashes': true,
+          'host': 'example.com',
+          'hostname': 'example.com',
+          'query': {},
+          'search': '',
+          'pathname': '/',
+          'path': '/'
+        }
+      };
+      
+      it('should parse as expected', function() {
+        for (var u in parseTestsWithQueryString) {
+          var actual = url.parse(u, true);
+          var expected = parseTestsWithQueryString[u];
+          for (var i in actual) {
+            if (actual[i] === null && expected[i] === undefined) {
+              expected[i] = null;
+            }
+          }
+        
+          expect(actual).to.deep.equal(expected);
+        }
+      });
+    });
+    
   });
   
   return { name: "test.url" }
