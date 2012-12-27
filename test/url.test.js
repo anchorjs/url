@@ -999,6 +999,57 @@ function(url) {
       });
     });
     
+    describe('relative tests', function() {
+      /*
+       [from, path, expected]
+      */
+      var relativeTests = [
+        ['/foo/bar/baz', 'quux', '/foo/bar/quux'],
+        ['/foo/bar/baz', 'quux/asdf', '/foo/bar/quux/asdf'],
+        ['/foo/bar/baz', 'quux/baz', '/foo/bar/quux/baz'],
+        ['/foo/bar/baz', '../quux/baz', '/foo/quux/baz'],
+        ['/foo/bar/baz', '/bar', '/bar'],
+        ['/foo/bar/baz/', 'quux', '/foo/bar/baz/quux'],
+        ['/foo/bar/baz/', 'quux/baz', '/foo/bar/baz/quux/baz'],
+        ['/foo/bar/baz', '../../../../../../../../quux/baz', '/quux/baz'],
+        ['/foo/bar/baz', '../../../../../../../quux/baz', '/quux/baz'],
+        ['foo/bar', '../../../baz', '../../baz'],
+        ['foo/bar/', '../../../baz', '../baz'],
+        ['http://example.com/b//c//d;p?q#blarg', 'https:#hash2', 'https:///#hash2'],
+        ['http://example.com/b//c//d;p?q#blarg',
+         'https:/p/a/t/h?s#hash2',
+         'https://p/a/t/h?s#hash2'],
+        ['http://example.com/b//c//d;p?q#blarg',
+         'https://u:p@h.com/p/a/t/h?s#hash2',
+         'https://u:p@h.com/p/a/t/h?s#hash2'],
+        ['http://example.com/b//c//d;p?q#blarg',
+         'https:/a/b/c/d',
+         'https://a/b/c/d'],
+        ['http://example.com/b//c//d;p?q#blarg',
+         'http:#hash2',
+         'http://example.com/b//c//d;p?q#hash2'],
+        ['http://example.com/b//c//d;p?q#blarg',
+         'http:/p/a/t/h?s#hash2',
+         'http://example.com/p/a/t/h?s#hash2'],
+        ['http://example.com/b//c//d;p?q#blarg',
+         'http://u:p@h.com/p/a/t/h?s#hash2',
+         'http://u:p@h.com/p/a/t/h?s#hash2'],
+        ['http://example.com/b//c//d;p?q#blarg',
+         'http:/a/b/c/d',
+         'http://example.com/a/b/c/d'],
+        ['/foo/bar/baz', '/../etc/passwd', '/etc/passwd']
+      ];
+      
+      it('should resolve as expected', function() {
+        relativeTests.forEach(function(relativeTest) {
+          var a = url.resolve(relativeTest[0], relativeTest[1]),
+              e = relativeTest[2];
+          
+          expect(a).to.equal(e);
+        });
+      });
+    });
+    
   });
   
   return { name: "test.url" }
