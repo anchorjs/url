@@ -12,6 +12,38 @@ For more information on using volo to manage JavaScript modules, visit [http://v
 
 ## Usage
 
+#### Parse
+
+Take a URL string, and return an object.
+
+```javascript
+url.parse('http://www.example.com/')
+```
+
+#### Format
+
+Take a parsed URL object, and return a formatted URL string.
+
+```javascript
+url.format({ 'protocol': 'http:',
+             'host': 'www.example.com',
+             'pathname': '/' })
+```
+
+#### Resolve
+
+Take a base URL, and a href URL, and resolve them as a browser would for an
+anchor tag.
+
+```javascript
+url.resolve('http://example.com/a', '/b');
+```
+
+## Interfaces
+
+This module conforms to the interface exported by Node's [URL](http://nodejs.org/api/url.html)
+module.
+
 ## Tests
 
 ##### Browser
@@ -27,11 +59,6 @@ To run tests in a browser, execute the Make target for the desired browser:
 To run headless tests from a terminal using [PhantomJS](http://phantomjs.org/):
 
     $ make test-phantomjs
-
-## Interfaces
-
-This module conforms to the interface exported by Node's [URL](http://nodejs.org/api/url.html)
-module.
 
 ## Credits
 
