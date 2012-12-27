@@ -3,7 +3,7 @@ function(url) {
 
   var mRelativeTests;
 
-  describe('URL', function() {
+  describe('url', function() {
   
     describe('File API', function() {
       it('should augment URL with create', function() {
@@ -17,7 +17,7 @@ function(url) {
   
   });
 
-  describe('URL - Node implementation', function() {
+  describe('url - Node implementation', function() {
     
     describe('parse tests', function() {
       var parseTests = {
@@ -1419,6 +1419,7 @@ function(url) {
         });
       });
     });
+    
   });
   
   return { name: "test.url" }

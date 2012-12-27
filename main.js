@@ -87,6 +87,20 @@ function(exports, file, querystring, punycode) {
         'file:': true
       };
   
+  /**
+   * Take a URL string, and return an object.
+   *
+   * Pass `true` as the second argument to also parse the query string using the
+   * `querystring` module. Defaults to `false`.
+   *
+   * Pass `true` as the third argument to treat `//foo/bar` as `{ host: 'foo', pathname: '/bar' }`
+   * rather than `{ pathname: '//foo/bar' }`. Defaults to `false`.
+   *
+   * @param {String} url
+   * @param {Boolean} parseQueryString
+   * @param {Boolean} slashesDenoteHost
+   * @api public
+   */
   function urlParse(url, parseQueryString, slashesDenoteHost) {
     if (url && typeof(url) === 'object' && url instanceof Url) return url;
 
@@ -314,6 +328,12 @@ function(exports, file, querystring, punycode) {
     return this;
   };
   
+  /**
+   * Take a parsed URL object, and return a formatted URL string.
+   *
+   * @param {Object} url
+   * @api public
+   */
   // format a parsed object into a url string
   function urlFormat(obj) {
     // ensure it's an object, and not a string url.
@@ -380,6 +400,14 @@ function(exports, file, querystring, punycode) {
     return protocol + host + pathname + search + hash;
   };
   
+  /**
+   * Take a base URL, and a href URL, and resolve them as a browser would for an
+   * anchor tag.
+   *
+   * @param {String} source
+   * @param {String} relative
+   * @api public
+   */
   function urlResolve(source, relative) {
     return urlParse(source, false, true).resolve(relative);
   }
