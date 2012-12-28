@@ -39,7 +39,7 @@ anchor tag.
 url.resolve('http://example.com/a', '/b');
 ```
 
-## Interfaces
+## Implements
 
 This module conforms to the interface exported by Node's [URL](http://nodejs.org/api/url.html)
 module.
