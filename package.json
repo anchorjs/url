@@ -22,12 +22,6 @@
   ],
   "main": "main",
   "dependencies": {
-    "punycode": "git://github.com/bestiejs/punycode.js.git",
-    "querystring": "git://github.com/anchorjs/querystring.git"
-  },
-  "browser": {
-    "punycode": "node_modules/punycode",
-    "querystring": "node_modules/querystring"
   },
   "devDependencies": {
     "express": "3.x.x",
