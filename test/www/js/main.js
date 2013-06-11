@@ -6,8 +6,7 @@ require.config({
     'chai': 'chai/chai'
   },
   packages: [
-    { name: 'url', location: '../../../..', main: 'main' },
-    { name: 'mocha-cloud', location: '../support', main: 'mocha-cloud' }
+    { name: 'url', location: '../../../..', main: 'main' }
   ],
   shim: {
     'mocha': {
