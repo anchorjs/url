@@ -1,7 +1,7 @@
 {
   "name": "url",
   "version": "0.0.1",
-  "description": "URL module for Anchor.js.",
+  "description": "Utilities for URL resolution and parsing.",
   "repository": {
     "type": "git",
     "url": "git://github.com/anchorjs/url.git"

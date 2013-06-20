@@ -5,7 +5,7 @@
       "require": "github:jrburke/requirejs/2.x.x",
       "punycode": "github:bestiejs/punycode.js/1.x.x",
       "querystring": "github:anchorjs/querystring/master",
-      "mocha": "github:visionmedia/mocha/1.x.x",
+      "mocha": "github:visionmedia/mocha/1.9.x",
       "chai": "github:chaijs/chai/1.4.x",
       "mocha-results": "github:jaredhanson/mocha-results/1.x.x"
     }

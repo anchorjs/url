@@ -1,0 +1,16 @@
+{
+  "name": "url",
+  "version": "0.0.0",
+  "description": "Utilities for URL resolution and parsing.",
+  "repo": "anchorjs/url",
+  "main": "main.js",
+  "scripts": [
+    "main.js",
+    "lib/file.js"
+  ],
+  "dependencies": {
+    "bestiejs/punycode.js": "*",
+    "anchorjs/querystring": "*"
+  },
+  "license": "MIT"
+}
