@@ -4,11 +4,13 @@ The URL module has utilities for URL resolution and parsing.
 
 ## Install
 
+##### component
+
+    $ component install anchorjs/url
+
 ##### volo
 
     $ volo add anchorjs/url
-
-For more information on using volo to manage JavaScript modules, visit [http://volojs.org/](http://volojs.org/).
 
 ## Usage
 
@@ -39,25 +41,30 @@ anchor tag.
 url.resolve('http://example.com/a', '/b');
 ```
 
-## Implements
+## Compatibility
 
-This module conforms to the interface exported by Node's [URL](http://nodejs.org/api/url.html)
+##### component
+
+This module uses the [AMD](https://github.com/amdjs/amdjs-api) format.  To
+include in component builds, use [component-amd](https://github.com/jaredhanson/component-amd):
+
+    component build -u component-amd
+
+##### Node
+
+This module implements the interface exported by Node's [URL](http://nodejs.org/api/url.html)
 module.
-
+    
 ## Tests
-
-##### Browser
 
 To run tests in a browser, execute the Make target for the desired browser:
 
     $ make test-chrome
     $ make test-firefox
     $ make test-safari
-
-##### PhantomJS
-
-To run headless tests from a terminal using [PhantomJS](http://phantomjs.org/):
-
+    
+Headless tests can be executed directly from a terminal:
+    
     $ make test-phantomjs
 
 ## Credits
