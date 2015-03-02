@@ -1,0 +1,29 @@
+{
+  "name": "url",
+  "version": "0.0.0",
+  "description": "Utilities for URL resolution and parsing.",
+  "authors": {
+    "name": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "homepage": "http://www.jaredhanson.net/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/anchorjs/url.git"
+  },
+  "license": "MIT",
+  "main": "main.js",
+  "dependencies": {
+    "punycode": "git://github.com/bestiejs/punycode.js.git#master",
+    "querystring": "git://github.com/anchorjs/querystring.git#master"
+  },
+  "ignore": [
+    ".gitignore",
+    ".jshintrc",
+    "Makefile",
+    "README.md",
+    "component.json",
+    "package.json",
+    "test"
+  ]
+}
