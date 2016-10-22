@@ -22,6 +22,8 @@
   ],
   "main": "main",
   "dependencies": {
+    "punycode": "bestiejs/punycode.js#v1.4.1",
+    "querystring": "anchorjs/querystring"
   },
   "devDependencies": {
     "express": "3.x.x",
